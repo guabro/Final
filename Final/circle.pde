@@ -1,14 +1,22 @@
-class Circle extends Shape {
+private class Circle extends Point {
   //Global Variables
+  public float diameter;
   //
   //Constructor
-  Circle(float x, float y, float w, float h) {
-    super(x, y, w, h);
+  private Circle(float x, float y, float diameter) {
+    super(x, y);
+    this.diameter = diameter;
   }//End Constructor
   //
-  //Methods
-  void draw() {
-    ellipse(x, y, w, h);
+  public void draw() {
+    fillCode();
+    circle(x, y, diameter);
+    fillWhite();
   }//End draw
+  public color fillColour ( color colour ) {
+    if ( colour!=255 ) { return 255; } else { return color( random(255), random(255), random(255) ); }
+  }//End fillColour
+  //
+  //Common Methods
   //
 }//End Circle
